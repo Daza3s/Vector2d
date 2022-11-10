@@ -20,6 +20,13 @@ class Vector2d {
         return ret;
     }
 
+    static angle(vec1, vec2) {
+        let ret = vec1.dot(vec2);
+        ret = ret / (vec1.length() * vec2.length());
+        ret = Math.acos(ret);
+        return ret;
+    }
+
     static vecToGradient(vec) {
         return Math.atan2(vec.x,vec.y);
     }
@@ -141,6 +148,11 @@ class Vector2d {
 
     multVec(vec) {
         let ret = new Vector2d(this.x * vec.x, this.y * y);
+        return ret;
+    }
+
+    dot(vec) {
+        let ret = this.x * vec.x + this.y * vec.y;
         return ret;
     }
 
